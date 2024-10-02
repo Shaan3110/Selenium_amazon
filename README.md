@@ -74,7 +74,7 @@ Open a terminal in your project directory and run:
 
     
     mvn test
-    Use code with caution.
+
 
 This command compiles your project, downloads dependencies, and executes the test suite.
 
