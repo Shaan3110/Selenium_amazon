@@ -13,12 +13,12 @@ This project automates various functionalities on Amazon using Selenium WebDrive
         └── test │ 
             └── base 
              └── BaseTest.java 
-            └── properties 
+            └── utilities 
              └── AccessProperties.java 
             └── testcases 
              └── Test.java
         └── resources 
-            └── PropertiesFIle.properties
+            └── PropertiesFIle.utilities
     └── testRunner 
         └── prod 
              └── amazon.xml
@@ -60,7 +60,7 @@ Ensure your pom.xml file includes the following dependencies:
 
 
 Configure Browser Drivers (Optional):
-If you're not using system-wide installation, set the WebDriver binary paths in your code using system properties like this:
+If you're not using system-wide installation, set the WebDriver binary paths in your code using system utilities like this:
 
     
     System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
