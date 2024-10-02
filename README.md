@@ -7,13 +7,24 @@ This project automates Amazon's search functionality using Selenium WebDriver an
 
 This project automates various functionalities on Amazon using Selenium WebDriver, supporting execution on multiple browsers. It provides a sample test case demonstrating product search, but you can easily extend it to automate other scenarios based on your needs.
 
-├── src │ 
-    └── java │ 
-    └── test │ 
-        └── testcases 
-         └── SearchProductTest.java 
-├── testng.xml 
-├── pom.xml
+
+    ├── src │ 
+        └── java │ 
+        └── test │ 
+            └── base 
+             └── BaseTest.java 
+            └── properties 
+             └── AccessProperties.java 
+            └── testcases 
+             └── Test.java
+        └── resources 
+            └── PropertiesFIle.properties
+    └── testRunner 
+        └── prod 
+             └── amazon.xml
+        └── uat 
+             └── amazonUat.xml
+    ├── pom.xml
 
 ## Prerequisites
 
