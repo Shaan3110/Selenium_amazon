@@ -4,6 +4,9 @@ import base.BaseTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.SearchProductPage;
+import utilities.ReadExcelData;
+
+import java.io.IOException;
 
 
 public class SearchProductTest extends BaseTest {
@@ -12,15 +15,11 @@ public class SearchProductTest extends BaseTest {
 
     @Test (dataProvider = "testData")
     public void searchWithValidText(String searchText, String result) throws InterruptedException {
-        SearchProductPage.searchProduct(searchText,result);
+        searchProductPage.searchProduct(searchText,result);
     }
 
     @DataProvider (name="testData")
-    public Object[][] tData ()
-    {
-        return new Object[][] {
-                {"phones","Results"},
-                {"smart phones","Results"}
-        };
+    public Object[][] tData () throws IOException {
+        return ReadExcelData.getData("src/test/resources/testData/SearchData.xlsx","Amazon Search Data");
     }
 }

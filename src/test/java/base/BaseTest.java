@@ -21,8 +21,8 @@ public class BaseTest {
     public void setup() throws IOException {
         if(driver == null)
         {
-            configProperties = new FileReader("src/test/resources/Config.properties");
-            locators = new FileReader("src/test/resources/Locators.properties");
+            configProperties = new FileReader("src/test/resources/configFiles/Config.properties");
+            locators = new FileReader("src/test/resources/configFiles/Locators.properties");
             configPropertiesAccess.load(configProperties);
             locatorsPropertiesAccess.load(locators);
         }

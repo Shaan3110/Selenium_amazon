@@ -29,9 +29,4 @@ public class ReadExcelData {
         }
         return excelData;
     }
-
-    public static void main(String[] args) throws IOException {
-        String[][] result =getData("src/test/resources/testData/SearchData.xlsx","Amazon Search Data");
-        System.out.println(Arrays.deepToString(result));
-    }
 }

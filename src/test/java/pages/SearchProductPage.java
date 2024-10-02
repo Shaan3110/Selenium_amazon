@@ -12,7 +12,7 @@ import java.time.Duration;
 public class SearchProductPage extends BaseTest {
 
 
-    public static void searchProduct(String searchText, String result)
+    public void searchProduct(String searchText, String result)
     {
         WebElement searchField = driver.findElement(By.id(locatorsPropertiesAccess.getProperty("search_field")));
         searchField.clear(); // This clears the existing text in the field

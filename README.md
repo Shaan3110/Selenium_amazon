@@ -13,12 +13,19 @@ This project automates various functionalities on Amazon using Selenium WebDrive
         └── test │ 
             └── base 
              └── BaseTest.java 
+            └── pages 
+             └── PageFiles.java 
             └── utilities 
              └── AccessProperties.java 
+             └── ReadExcelData.java 
             └── testcases 
-             └── Test.java
+             └── TestCases.java
         └── resources 
-            └── PropertiesFIle.utilities
+            └── configFiles 
+             └── Config.properties
+             └── Locators.properties
+            └── testData
+             └── SearchData.xlxs
     └── testRunner 
         └── prod 
              └── amazon.xml
