@@ -27,10 +27,10 @@ This project automates various functionalities on Amazon using Selenium WebDrive
     │       └── testData
     │           └── SearchData.xlsx
     └── testRunner
-    └── prod
-        └── amazon.xml
-    └── uat
-        └── amazonUat.xml
+        └── prod
+            └── amazon.xml
+        └── uat
+            └── amazonUat.xml
     ├── pom.xml
 
 
