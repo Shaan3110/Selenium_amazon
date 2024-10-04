@@ -1,6 +1,8 @@
 package testcases;
 
 import base.BaseTest;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.SearchProductPage;
@@ -8,18 +10,26 @@ import utilities.ReadExcelData;
 
 import java.io.IOException;
 
-
 public class SearchProductTest extends BaseTest {
 
-    private final SearchProductPage searchProductPage = new SearchProductPage();
+    private SearchProductPage searchProductPage ;
 
-    @Test (dataProvider = "testData")
-    public void searchWithValidText(String searchText, String result) throws InterruptedException {
-        searchProductPage.searchProduct(searchText,result);
+    @BeforeMethod
+    public void setupPage() {
+        // Initialize SearchProductPage after driver setup
+        searchProductPage = new SearchProductPage(driver);
     }
 
-    @DataProvider (name="testData")
-    public Object[][] tData () throws IOException {
-        return ReadExcelData.getData("src/test/resources/testData/SearchData.xlsx","Amazon Search Data");
+    @Test(dataProvider = "testData")
+    public void searchWithValidText(String searchText, String expectedResult) throws IOException {
+//        SearchProductPage searchProductPage = new SearchProductPage(driver);
+        searchProductPage.searchProduct(searchText);
+        String actualResult = searchProductPage.getSearchResultsText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @DataProvider(name = "testData")
+    public Object[][] tData() throws IOException {
+        return ReadExcelData.getData("src/test/resources/testData/SearchData.xlsx", "Amazon Search Data");
     }
 }
